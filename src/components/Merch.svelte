@@ -1,11 +1,11 @@
 <script>
-export let image;
+export let time;
 
 import { Link } from "svelte-routing";
 </script>
 
 <div class="thumbnail">
-  <Link to="/artwork/?aId={image.id}"> 
+  <Link to="/store/?mId={item.id}"> 
     <h3>{image.title}</h3>
     <img src={image.image} alt={image.title} />
   </Link>

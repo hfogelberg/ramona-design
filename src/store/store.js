@@ -30,7 +30,7 @@ export const storeitems = writable([
     price: 5
   },
   {
-    id: ,
+    id: 6,
     image: "/images/hoodiee.svg",
     title: "Hoodie",
     description: "Lorem ipsum 5",

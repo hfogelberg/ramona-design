@@ -12,6 +12,7 @@
 import { paintings } from "../store/store.js"; 
 import Thumbnail from  "../components/Thumbnail.svelte";
 let images;
+import { Link } from "svelte-routing";
 
 const unsubscribe = paintings.subscribe(value => {
   images = value;
@@ -22,7 +23,7 @@ const unsubscribe = paintings.subscribe(value => {
   .gallery {
     width: 100vw;
     height: 100%;
-    padding: 2rem;
+    /* padding: 2rem; */
   }
 
   .images {
@@ -32,14 +33,16 @@ const unsubscribe = paintings.subscribe(value => {
     margin: 0;
     padding: 0;
   }
-	
-  h2 {
-		color: #ff3e00;
+
+h2 {
+		color: #34495e;
 		text-transform: uppercase;
-		font-size: 3em;
+		font-size: 3rem;
 		font-weight: 100;
 		text-align: center;
 		margin-top: 1rem;
+    text-align: center;
+    margin-bottom: -0.5rem;
 	}
 
  </style>

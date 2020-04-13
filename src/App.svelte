@@ -4,21 +4,27 @@
   import Information from "./pages/Information.svelte";
 	import Gallery from "./pages/Gallery.svelte";
 	import Shop from "./pages/Shop.svelte";
+	import Artwork from "./pages/Artwork.svelte";
  
   export let url = "";
 </script> 
  
 <main>
 	<Router url="{url}">
-		<h1>Helena's Art</h1>
+		<h1>
+			<Link to="/">
+				Helena's Art
+			</Link>
+		</h1>
 		<nav>
 			<link >
+			<Link to="/"><img src="/images/home.svg" alt="home" /> |</Link>
 			<Link to="gallery">Gallery | </Link>
 			<Link to="shop">Shop | </Link>
 			<Link to="information">Information</Link>
 		</nav>
 		<div>
-			<!-- <Route path="blog/:id" component="{BlogPost}" /> -->
+			<Route path="artwork" component="{Artwork}" />
 			<Route path="gallery" component="{Gallery}" />
 			<Route path="shop" component="{Shop}" />
 			<Route path="information" component="{Information}" />
@@ -30,9 +36,13 @@
 </main>
 
 <style>
-	main {
-		padding: 1em;
-		max-width: 240px;
+	html {
+		background-color: #f9f4ee;
+	}
+
+	main {		max-width: 240px;
+		background-color: #f9f4ee;
+		height: 100%;
 	}
 
 	nav {
@@ -40,12 +50,13 @@
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #34495e;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
 		text-align: center;
 		margin-top: 1rem;
+		margin-bottom: -1rem;
 	}
 
 	@media (min-width: 640px) {
