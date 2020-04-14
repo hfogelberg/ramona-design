@@ -25,6 +25,7 @@ import { Link } from "svelte-routing";
 }
 
 img {
-  height: 15rem;
+  height: 240px;
+  width: 240px;
 }
 </style>

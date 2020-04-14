@@ -3,34 +3,32 @@ import { Link } from "svelte-routing";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const aId = urlParams.get('aId');
-let image = {};
-import { paintings } from "../store/store.js"; 
+const mId = urlParams.get('mId');
+let item = {};
+import { storeitems } from "../store/store.js"; 
 
-const unsubscribe = paintings.subscribe(value => {
-  let images = value;
-  image = images[aId-1];
+const unsubscribe = storeitems.subscribe(value => {
+  let items = value;
+  item = items[mId-1];
 });
 </script>
 
-<div class="image-detail">
-  <h2>{image.title}</h2>
+<div class="item-detail">
+  <h2>{item.title}</h2>
 
-  <img src={image.image} alt={image.title} class="image" />
+  <img src={item.image} alt={item.title} class="image" />
 
   <div class="description">
-    {image.description}
+    {item.description}
   </div>
   <div class="info">
-    Height: {image.height}<br>
-    Width: {image.width}<br>
-    Price: {image.price} €
+    Price: {item.price} €
   </div>
 </div>
 
 <style>
 
-.image-detail {
+.item-detail {
   margin: 0 6rem;
   border: 2px solid black;
   border-radius: 10px;
@@ -45,7 +43,7 @@ const unsubscribe = paintings.subscribe(value => {
 }
 
 .info {
-  text-align: left !important;
+  text-align: left;
 }
 
 .image {
@@ -53,5 +51,3 @@ const unsubscribe = paintings.subscribe(value => {
 }
 
 </style>
-
-

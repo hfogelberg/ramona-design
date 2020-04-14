@@ -1,3 +1,14 @@
+<script>
+  let images;
+  import { paintings } from "../store/store.js"; 
+  import Thumbnail from  "../components/Thumbnail.svelte";
+  import { Link } from "svelte-routing";
+
+  const unsubscribe = paintings.subscribe(value => {
+    images = value;
+  });
+</script>
+
 <div class="gallery">
   <h2>Gallery</h2>
 
@@ -7,17 +18,6 @@
     {/each}
   </div>
 </div>
-
-<script>
-import { paintings } from "../store/store.js"; 
-import Thumbnail from  "../components/Thumbnail.svelte";
-let images;
-import { Link } from "svelte-routing";
-
-const unsubscribe = paintings.subscribe(value => {
-  images = value;
-});
-</script>
 
 <style>
   .gallery {

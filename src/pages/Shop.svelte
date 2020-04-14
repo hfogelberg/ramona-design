@@ -2,20 +2,20 @@
   <h2>Gallery</h2>
 
   <div class="images">
-    {#each images as img}
-      <Thumbnail image={img} />
+    {#each items as i}
+      <Merch item={i} />
     {/each}
   </div>
 </div>
 
 <script>
+let items;
 import { storeitems } from "../store/store.js"; 
-import Thumbnail from  "../components/Thumbnail.svelte";
-let images;
+import Merch from  "../components/Merch.svelte";
 import { Link } from "svelte-routing";
 
 const unsubscribe = storeitems.subscribe(value => {
-  images = value;
+  items = value;
 });
 </script>
 
@@ -23,7 +23,6 @@ const unsubscribe = storeitems.subscribe(value => {
   .gallery {
     width: 100vw;
     height: 100%;
-    /* padding: 2rem; */
   }
 
   .images {

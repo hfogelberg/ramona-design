@@ -5,7 +5,8 @@
 	import Gallery from "./pages/Gallery.svelte";
 	import Shop from "./pages/Shop.svelte";
 	import Artwork from "./pages/Artwork.svelte";
- 
+	import Shopitem from "./pages/ShopItem.svelte";
+
   export let url = "";
 </script> 
  
@@ -25,14 +26,13 @@
 		</nav>
 		<div>
 			<Route path="artwork" component="{Artwork}" />
+			<Route path="shopitem" component="{Shopitem}" />
 			<Route path="gallery" component="{Gallery}" />
 			<Route path="shop" component="{Shop}" />
 			<Route path="information" component="{Information}" />
 			<Route path="/"><Index /></Route>
 		</div>
 	</Router>
-	
-
 </main>
 
 <style>
